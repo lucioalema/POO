@@ -2,7 +2,7 @@ using System;
 
 namespace POO
 {
-    public class Coche
+    public class Coche : ITestInterface
     {
         public string Patente;
         public string Color;
@@ -42,6 +42,12 @@ namespace POO
         {
             Console.WriteLine("Reduciendo la velocidad en {0} km/h", cantidad);
             this.velocidad -= cantidad;
+        }
+
+        public string GetFullDescription()
+        {
+            return string.Format("Patente: {0} - Marca: {1} - Modelo: {2}", this.Patente, this.Marca, this.Modelo);
+            //return this.Patente + " - " + this.Marca + " - " + this.Modelo;
         }
     }
 }
