@@ -90,8 +90,28 @@ namespace POO
             Console.WriteLine("El sueldo de {0} es de {1}", empleadoFL.Apellido, empleadoFL.SueldoMensual());
         }
 
-        /*static void MainDelegados()
+        /*
+		public class Button
         {
+            public delegate void ButtonClickedHandler();
+            public event ButtonClickedHandler ButtonClicked;
+            public void SimulateClick()
+            {
+                if (ButtonClicked != null)
+                    ButtonClicked();
+            }
+        }
+		static void MainDelegados()
+        {
+			Button b = new Button();
+            b.ButtonClicked += () => Console.WriteLine("click simulation");
+            b.ButtonClicked += click;
+            b.SimulateClick();
+			
+			Action<string> a = s => Console.WriteLine("  Hello, {0}!", s);
+            Action<string> b = s => Console.WriteLine("  Goodbye, {0}!", s);
+            Action<string> c = a + b;
+            Action<string> d = c - a;
             Action<string, long> message; 
             Func<string, string> messageUpper = s => s.ToUpper();
             messageDelegate mDelegate = messageStatic;
